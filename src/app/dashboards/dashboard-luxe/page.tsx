@@ -8,7 +8,7 @@ export default function DashboardPage() {
       <iframe
         width="100%"
         height="100%"
-        src="https://lookerstudio.google.com/embed/reporting/8c0a9a71-c0f1-4174-b026-c2f21d5bf47f/page/p_h7qk4ulzhd"
+        src="https://lookerstudio.google.com/embed/reporting/ade6cd80-14e9-42ab-95a7-67e76c846e7a/page/p_gp0d4hp3hd"
         allowFullScreen
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
       ></iframe>

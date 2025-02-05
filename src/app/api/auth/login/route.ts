@@ -5,35 +5,35 @@ import { sign } from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
 const MAX_AGE = 24 * 60 * 60;
+const SECRET = process.env.JWT_SECRET || "supersecret";
+
+
+// Hardcoded users
+const users = [
+  { username: "achraf@example.com", password: "123", sector: "textile" },
+  { username: "user1@example.com", password: "user123", sector: "verre" },
+  { username: "akram@example.com", password: "123", sector: "luxe" },
+];
 
 export async function POST(request: Request) {
-  const BASE_URL = "https://localhost:3000";
-
   const body = await request.json();
-
   const { username, password } = body;
 
   try {
-    const response = await fetch(`${BASE_URL}/users/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "origin": "http://localhost:8080"
-      },
-      body: JSON.stringify({ username, password }),
-    });
+    // Find the user in the hardcoded list
+    const user = users.find(
+      (u) => u.username === username && u.password === password
+    );
 
-    if (!response.ok) {
-      throw new Error("Invalid credentials");
+    if (!user) {
+      return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
     }
 
-    const data = await response.json();
-    // console.log(data);
-    const secret = process.env.JWT_SECRET || "";
-
-    const userSector = data.user.sector;
-
-    const token = sign({ username, userSector }, secret, { expiresIn: MAX_AGE });
+    // Generate JWT token
+    const token = sign({ username: user.username, userSector: user.sector }, SECRET, {
+      expiresIn: MAX_AGE,
+    });
+    console.log("Generated JWT payload:", { username: user.username, userSector: user.sector });
 
     const serialized = serialize("OurSiteJWT", token, {
       httpOnly: true,
@@ -42,16 +42,16 @@ export async function POST(request: Request) {
       maxAge: MAX_AGE,
       path: "/",
     });
-    
-    // console.log(serialized);
-    
 
-    return NextResponse.json(data, {
-      status: 201,
-      headers: { "Set-Cookie": serialized },
-    });
+    return NextResponse.json(
+      { user },
+      {
+        status: 200,
+        headers: { "Set-Cookie": serialized },
+      }
+    );
   } catch (error) {
-    console.log("Error during login:", error);
-    return NextResponse.json(error, {status: 500});
+    console.error("Error during login:", error);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

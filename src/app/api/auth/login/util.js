@@ -1,7 +1,7 @@
 
 
 
-const BASE_URL = "https://localhost:3000";
+const BASE_URL = "https://jobo-backend-919389594683.europe-west9.run.app";
 export const login = async (username, password) => {
 
 
