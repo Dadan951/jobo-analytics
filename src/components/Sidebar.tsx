@@ -1,48 +1,39 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
+import { FaSignOutAlt, FaHome, FaUserAlt } from "react-icons/fa"; // Adding icons
 
 const Sidebar = () => {
   const router = useRouter();
-
   const [userName, setUserName] = useState("Default");
-  // console.log("sidebar mounted bien");
+  const [userSector, setUserSector] = useState("Unknown Sector");
 
   useEffect(() => {
-    // console.log("use effect trigerred");
+    console.log("Sidebar useEffect triggered");
 
-    // Retrieve user data from cookies
-    const fetchUserDataFromCookie = () => {
-      // console.log("inside fetch user data func");
-      const token = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("OurSiteJWT="));
-      // console.log(token);
+    // ✅ Fetch JWT from API (instead of document.cookie)
+    const fetchUserData = async () => {
+      try {
+        const res = await fetch("/api/auth/token", { credentials: "include" }); // Ensures cookies are sent
+        const data = await res.json();
+        
+        if (data.token) {
+          const decoded = jwt.decode(data.token) as { username?: string; userSector?: string } | null;
+          console.log("🟠 Decoded JWT:", decoded);
 
-      if (token) {
-        const jwtToken = token.split("=")[1];
-        try {
-          const decoded = jwt.decode(jwtToken) as { username?: string } | null;
-          console.log("decoded:");
-          // console.log(decoded);
-
-          if (decoded && decoded.username) {
-            console.log(decoded.username);
-
-            setUserName(decoded.username);
-          } else {
-            setUserName("");
+          if (decoded) {
+            setUserName(decoded.username || "Unknown User");
+            setUserSector(decoded.userSector || "Unknown Sector");
           }
-        } catch (error) {
-          console.error("Error decoding token:", error);
-          setUserName("");
+        } else {
+          console.log("❌ No token received");
         }
-      } else {
-        setUserName("");
+      } catch (error) {
+        console.error("❌ Error fetching token:", error);
       }
     };
 
-    fetchUserDataFromCookie();
+    fetchUserData();
   }, []);
 
   const handleLogout = async () => {
@@ -56,17 +47,37 @@ const Sidebar = () => {
       console.error("Logout failed:", error);
     }
   };
+
   return (
-    <div className="w-1/4 h-screen bg-gray-100 mr-1 shadow-md p-5 rounded-lg flex flex-col items-center justify-between">
-      <div className="flex flex-col items-center">
+    <div className="w-64 h-full bg-blue-900 text-white p-6 flex flex-col">
+      {/* Removed the JOBO Analytics branding */}
+      
+      <div className="flex-1">
         <p className="text-lg font-bold mb-2">{userName}</p>
-        <hr className="w-full border-t-2 border-gray-300 mb-9" />
-        <p className=" text-xl font-bold text-gray-700 mb-4">JOBO Analytics</p>
+        
+        {/* Highlight the sector */}
+        <p className="text-2xl font-extrabold uppercase text-yellow-400 mb-6">{userSector}</p> {/* Larger, highlighted user sector */}
+
+        <hr className="border-t border-gray-400 mb-8" />
+
+        {/* Sidebar menu with icons */}
+        <div className="flex flex-col space-y-6">
+          <div className="flex items-center space-x-4 text-white hover:text-blue-300 cursor-pointer">
+            <FaHome size={24} />
+            <span>Home</span>
+          </div>
+          
+          <div className="flex items-center space-x-4 text-white hover:text-blue-300 cursor-pointer">
+            <FaUserAlt size={24} />
+            <span>Profile</span>
+          </div>
+          
+          {/* Add other items as necessary */}
+        </div>
       </div>
-      <button
-        onClick={handleLogout}
-        className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-300"
-      >
+
+      <button onClick={handleLogout} className="flex items-center text-white hover:text-red-500 mt-auto">
+        <FaSignOutAlt className="mr-2" />
         Logout
       </button>
     </div>

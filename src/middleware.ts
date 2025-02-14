@@ -13,10 +13,10 @@ export function middleware(request: NextRequest) {
 
   try {
     const decoded: any = jwtDecode(token);
-    console.log("Decoded JWT:", decoded); // ✅ Log decoded token
+    console.log("Decoded JWT:", decoded); 
 
     const { username, userSector } = decoded;
-    console.log("User Sector from token:", userSector); // ✅ Ensure userSector is correct
+    console.log("User Sector from token:", userSector); 
 
     const { pathname } = new URL(request.url);
 
@@ -27,9 +27,8 @@ export function middleware(request: NextRequest) {
       coutellerie: "/dashboards/dashboard-coutellerie",
     };
 
-    // ✅ Log path and expected sector
-    console.log("Requested Path:", pathname);
-    console.log("Expected Sector for this path:", Object.entries(sectorPaths).find(([_, path]) => pathname.startsWith(path)));
+    // console.log("Requested Path:", pathname);
+    // console.log("Expected Sector for this path:", Object.entries(sectorPaths).find(([_, path]) => pathname.startsWith(path)));
 
     for (const [sector, path] of Object.entries(sectorPaths)) {
       if (pathname.startsWith(path) && userSector !== sector) {

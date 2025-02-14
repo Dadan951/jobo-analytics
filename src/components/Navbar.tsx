@@ -16,8 +16,8 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      link: "acceuil",
-      title: "Acceuil"
+      link: "accueil",
+      title: "Accueil"
     },
     {
       id: 2,
@@ -32,19 +32,24 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    console.log("use effect navbar");
-    
-    // Function to get the user's sector from the token
+    console.log("useEffect Navbar");
+  
     const getUserSector = () => {
-      const token = document.cookie.split('; ').find(row => row.startsWith('OurSiteJWT='));
-      console.log("token =" + token);
-      
-      if (token) {
-        const jwtToken = token.split('=')[1];
+      const tokenCookie = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("OurSiteJWT="));
+  
+      console.log("Token from cookie:", tokenCookie);
+  
+      if (tokenCookie) {
+        const jwtToken = tokenCookie.split("=")[1];
+  
         try {
-          const decoded = jwt.decode(jwtToken) as { sector?: string } | null;
-          if (decoded && decoded.sector) {
-            setUserSector(decoded.sector);
+          const decoded = jwt.decode(jwtToken) as { userSector?: string } | null;
+          console.log("Decoded token:", decoded);
+  
+          if (decoded && decoded.userSector) {
+            setUserSector(decoded.userSector);
           } else {
             setUserSector(null);
           }
@@ -56,8 +61,10 @@ const Navbar = () => {
         setUserSector(null);
       }
     };
+  
     getUserSector();
   }, []);
+  
 
   const handleDashboardClick = () => {
     if (userSector) {
@@ -68,21 +75,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="flex justify-between items-center w-full h-14 px-4 text-white bg-blue-900 mb-2 shadow-md nav">
-      <div>
-        <h1 className="text-5xl font-signature ml-2">
-          <Link
-            className="link-underline link-underline-black"
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Image src={logo} alt={"logo"} height={60} width={60} />
-          </Link>
-        </h1>
+    <header className="flex justify-between items-center w-full h-16 px-6 text-white bg-blue-900 mb-4 shadow-lg nav">
+      {/* Logo Section */}
+      <div className="flex items-center space-x-4">
+        <Image src={logo} alt="logo" height={50} width={50} />
+        <h1 className="text-3xl font-semibold tracking-tight text-white">JOBO ANALYTICS</h1>
       </div>
 
-      <ul className="hidden md:flex">
+      {/* Navbar Links */}
+      <ul className="hidden md:flex space-x-6">
         {links.map(({ id, link, title }) => (
           <li
             key={id}
@@ -94,6 +95,7 @@ const Navbar = () => {
         ))}
       </ul>
 
+      {/* Mobile Hamburger */}
       <div
         onClick={() => setNav(!nav)}
         className="cursor-pointer pr-4 z-10 text-white md:hidden"
@@ -101,6 +103,7 @@ const Navbar = () => {
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
+      {/* Mobile Menu */}
       {nav && (
         <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
           {links.map(({ id, link }) => (
