@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from './accueil/Accueil.module.css';
+import styles from './Accueil.module.css';
 
 export default function Acceuil() {
   return (
