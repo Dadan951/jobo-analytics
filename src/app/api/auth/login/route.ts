@@ -10,9 +10,10 @@ const SECRET = process.env.JWT_SECRET || "supersecret";
 
 // Hardcoded users
 const users = [
-  { username: "achraf@example.com", password: "123", sector: "textile" },
-  { username: "user1@example.com", password: "user123", sector: "verre" },
+  { username: "achraf@example.com", password: "123", sector: "coutellerie" },
+  { username: "mehdi@example.com", password: "user123", sector: "verre" },
   { username: "akram@example.com", password: "123", sector: "luxe" },
+  { username: "riad@example.com", password: "123", sector: "textile" },
 ];
 
 export async function POST(request: Request) {

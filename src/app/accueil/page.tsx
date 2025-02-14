@@ -12,7 +12,7 @@ export default function Acceuil() {
       <div className={styles.heroSection}>
         <h1 className={styles.heroTitle}>Bienvenue sur JOBO Analytics</h1>
         <p className={styles.heroDescription}>
-          Un dashbaord qui vous permet de suivre en temps reel les tendences et le comportement des jeunes concernant les metiers de l'indutrie grâce à notre application mobile JOBO
+          Un dashboard qui vous permet de suivre en temps reel les tendences et le comportement des jeunes concernant les metiers de l'industrie grâce à notre application mobile JOBO
         </p>
         <button className={styles.heroButton}>Explorer le Dashboard</button>
       </div>
