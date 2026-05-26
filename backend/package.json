@@ -1,0 +1,26 @@
+{
+  "name": "jobo-backend",
+  "version": "1.0.0",
+  "description": "Backend API pour JOBO Analytics",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "init-db": "node src/scripts/initCollections.js",
+    "seed:verrerie": "node --dns-result-order=ipv4first src/scripts/seedVerrerie.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.3.2",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.23.0",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.5",
+    "stripe": "^22.0.2"
+  }
+}

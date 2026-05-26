@@ -1,0 +1,64 @@
+[2026-03-27T23:42:27.286Z] [LOGIN] - Connexion réussie pour un utilisateur
+[2026-03-27T23:44:07.218Z] [REGISTER] - Création d'un nouvel utilisateur
+[2026-03-28T22:04:42.194Z] [REGISTER] userId=69c8507a4dd9897608b06dd6 - Nouvel utilisateur créé : testuser1@gmail.com
+[2026-03-28T22:04:59.536Z] [LOGIN] userId=69c8507a4dd9897608b06dd6 - Connexion réussie pour testuser1@gmail.com
+[2026-03-28T22:05:16.738Z] [LOGIN] userId=69c8507a4dd9897608b06dd6 - Connexion réussie pour testuser1@gmail.com
+[2026-03-28T22:05:25.747Z] [LOGIN] userId=69c8507a4dd9897608b06dd6 - Connexion réussie pour testuser1@gmail.com
+[2026-03-28T22:23:41.986Z] [REGISTER] userId=69c854edccb6a7c499a7900e - Nouvel utilisateur créé : ahmed@gmail.com
+[2026-04-08T14:13:21.165Z] [REGISTER] userId=69d66281c8e9ed65d4c79c51 - Nouvel utilisateur créé : test@jobo.fr
+[2026-04-08T14:13:40.966Z] [LOGIN] userId=69d66281c8e9ed65d4c79c51 - Connexion réussie pour test@jobo.fr
+[2026-04-08T14:15:26.310Z] [CHANGE_PASSWORD] userId=69d66281c8e9ed65d4c79c51 - Mot de passe modifié avec succès
+[2026-04-08T14:15:39.475Z] [UPDATE_EMAIL] userId=69d66281c8e9ed65d4c79c51 - Adresse email mise à jour avec succès
+[2026-04-08T14:18:52.459Z] [LOGIN] - Test log manuel
+[2026-04-15T17:08:16.441Z] [LOGIN] userId=69d68838c598bb0ca45615de - Connexion réussie (2FA) pour jobonalytics1@gmail.com
+[2026-04-16T13:50:38.052Z] [LOGIN] userId=69d68838c598bb0ca45615de - Connexion réussie (2FA) pour jobonalytics1@gmail.com
+[2026-04-16T21:08:00.707Z] [LOGIN] userId=69d68838c598bb0ca45615de - Connexion réussie pour jobonalytics1@gmail.com
+[2026-04-21T20:57:28.093Z] [LOGIN] userId=69d68838c598bb0ca45615de - Connexion réussie pour jobonalytics1@gmail.com
+[2026-04-21T21:08:58.332Z] [REGISTER] userId=69e7e76a2e2722c2c061413b - Nouvel utilisateur créé : paulinedang0908@gmail.com
+[2026-04-21T21:09:21.851Z] [LOGIN] userId=69e7e76a2e2722c2c061413b - Connexion réussie pour paulinedang0908@gmail.com
+[2026-04-21T21:14:22.304Z] [REGISTER] userId=69e7e8aeed5b0f34c0d8b116 - Nouvel utilisateur créé : paulinedang0908@gmail.com
+[2026-04-21T21:14:40.789Z] [LOGIN] userId=69e7e8aeed5b0f34c0d8b116 - Connexion réussie pour paulinedang0908@gmail.com
+[2026-04-21T21:37:45.900Z] [LOGIN] userId=69e7e8aeed5b0f34c0d8b116 - Connexion réussie pour paulinedang0908@gmail.com
+[2026-04-21T21:59:52.206Z] [REGISTER] userId=69e7f35877df309216202660 - Nouvel utilisateur créé : paulinedang0908@gmail.com
+[2026-04-21T22:00:08.885Z] [LOGIN] userId=69e7f35877df309216202660 - Connexion réussie pour paulinedang0908@gmail.com
+<<<<<<< .mine
+[2026-04-24T08:24:22.961Z] [LOGIN] userId=69e35323b0678afb5e5c3cbb - Connexion réussie pour ttac22423@gmail.com
+[2026-04-24T08:25:49.664Z] [LOGIN] userId=69e35323b0678afb5e5c3cbb - Connexion réussie pour ttac22423@gmail.com
+[2026-04-25T15:57:52.240Z] [LOGIN] userId=69e35323b0678afb5e5c3cbb - Connexion réussie pour ttac22423@gmail.com
+||||||| .r225
+[2026-04-24T08:24:22.961Z] [LOGIN] userId=69e35323b0678afb5e5c3cbb - Connexion réussie pour ttac22423@gmail.com
+[2026-04-24T08:25:49.664Z] [LOGIN] userId=69e35323b0678afb5e5c3cbb - Connexion réussie pour ttac22423@gmail.com
+=======
+[2026-04-22T10:55:51.699Z] [REGISTER] userId=69e8a9378d58e637c5210a22 - Nouvel utilisateur créé : pelis10643@4heats.com
+[2026-04-22T10:56:11.232Z] [LOGIN] userId=69e8a9378d58e637c5210a22 - Connexion réussie pour pelis10643@4heats.com
+[2026-04-23T20:50:58.604Z] [REGISTER] userId=69ea8632ed122f1bbb17c897 - Nouvel utilisateur créé : pelis10643@4heats.com
+[2026-04-23T20:51:27.859Z] [LOGIN] userId=69ea8632ed122f1bbb17c897 - Connexion réussie pour pelis10643@4heats.com
+[2026-04-25T14:04:03.817Z] [LOGIN] userId=69e613049f413ecbd1b394fa - Connexion réussie pour amoude113@gmail.com
+[2026-04-25T14:12:29.538Z] [REGISTER] userId=69eccbcdcb2011986707a8d1 - Nouvel utilisateur créé : peferag664@soppat.com (org: NSG, filière: VERRERIE)
+[2026-04-25T14:12:55.755Z] [LOGIN] userId=69eccbcdcb2011986707a8d1 - Connexion réussie pour peferag664@soppat.com
+>>>>>>> .r237
+[2026-04-26T10:55:29.408Z] [LOGIN] userId=69eccbcdcb2011986707a8d1 - Connexion réussie pour peferag664@soppat.com
+[2026-04-26T11:21:18.817Z] [REGISTER] userId=69edf52ee513dc9e00432f14 - Nouvel utilisateur créé : dadanspam95@gmail.com (org: NORD, filière: VERRERIE)
+[2026-04-26T11:21:32.638Z] [LOGIN] userId=69edf52ee513dc9e00432f14 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T11:27:07.494Z] [LOGIN] userId=69edf52ee513dc9e00432f14 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T11:27:48.027Z] [LOGIN] userId=69edf52ee513dc9e00432f14 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T11:45:53.306Z] [LOGIN] userId=69edf52ee513dc9e00432f14 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T11:53:49.101Z] [LOGIN] userId=69edf52ee513dc9e00432f14 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T11:57:04.464Z] [LOGIN] userId=69edf52ee513dc9e00432f14 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T16:15:21.604Z] [REGISTER] userId=69ee3a197b2d371c14864769 - Nouvel utilisateur créé : dadanspam95@gmail.com (org: saint, filière: VERRERIE)
+[2026-04-26T16:15:39.556Z] [LOGIN] userId=69ee3a197b2d371c14864769 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T16:23:11.350Z] [REGISTER] userId=69ee3bef7b2d371c1486485a - Nouvel utilisateur créé : dadanspam95@gmail.com (org: saint, filière: VERRERIE)
+[2026-04-26T16:23:25.983Z] [LOGIN] userId=69ee3bef7b2d371c1486485a - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T16:24:11.267Z] [LOGIN] userId=69ee3bef7b2d371c1486485a - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T16:30:14.069Z] [REGISTER] userId=69ee3d967b2d371c148648bf - Nouvel utilisateur créé : dadanspam95@gmail.com (org: saint, filière: VERRERIE)
+[2026-04-26T16:30:35.761Z] [LOGIN] userId=69ee3d967b2d371c148648bf - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T16:35:21.834Z] [REGISTER] userId=69ee3ec9fd7cb325b6333d7d - Nouvel utilisateur créé : dadanspam95@gmail.com (org: saint, filière: VERRERIE)
+[2026-04-26T16:35:35.892Z] [LOGIN] userId=69ee3ec9fd7cb325b6333d7d - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T16:42:31.380Z] [REGISTER] userId=69ee4077fd7cb325b6333df7 - Nouvel utilisateur créé : dadanspam95@gmail.com (org: nsg group, filière: VERRERIE)
+[2026-04-26T16:42:46.373Z] [LOGIN] userId=69ee4077fd7cb325b6333df7 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T21:07:51.027Z] [LOGIN] userId=69ee4077fd7cb325b6333df7 - Connexion réussie pour dadanspam95@gmail.com
+[2026-04-26T21:12:05.004Z] [LOGIN] userId=69ee4077fd7cb325b6333df7 - Connexion réussie pour dadanspam95@gmail.com
+[2026-05-05T18:02:02.543Z] [REGISTER] userId=69fa309a7aefcf3aa22f3765 - Nouvel utilisateur créé : benoitbazin@grr.la (org: saint, filière: VERRERIE)
+[2026-05-05T18:02:31.244Z] [LOGIN] userId=69fa309a7aefcf3aa22f3765 - Connexion réussie pour benoitbazin@grr.la
+[2026-05-09T20:45:24.663Z] [REGISTER] userId=69ff9ce401086ceb4df537d7 - Nouvel utilisateur créé : powise4733@gcervera.com (org: Saint-Gobain, filière: VERRERIE)
+[2026-05-09T20:45:52.041Z] [LOGIN] userId=69ff9ce401086ceb4df537d7 - Connexion réussie pour powise4733@gcervera.com
